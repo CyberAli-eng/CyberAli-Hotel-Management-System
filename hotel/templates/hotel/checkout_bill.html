@@ -1,0 +1,12 @@
+<!-- hotel/templates/hotel/checkout_bill.html -->
+<h2>Checkout Bill</h2>
+<p><strong>Name:</strong> {{ customer.name }}</p>
+<p><strong>Room:</strong> {{ customer.room.room_number }} ({{ customer.room.room_type }})</p>
+<p><strong>Check-in:</strong> {{ customer.check_in_date }}</p>
+<p><strong>Check-out:</strong> {{ customer.check_out_date }}</p>
+<p><strong>Days Stayed:</strong> {{ days }}</p>
+<p><strong>Rate per Night:</strong> ₹{{ price_per_night }}</p>
+<p><strong>Total Amount:</strong> ₹{{ total }}</p>
+<a href="{% url 'export_bill_pdf' customer.id %}">Download PDF Bill</a>
+
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>

@@ -1,0 +1,41 @@
+{% extends 'hotel/base.html' %}
+{% block content %}
+<h1>Final Bill Summary for {{ customer.name }}</h1>
+
+    <p><strong>Room Number:</strong> {{ customer.room.room_number }}</p>
+    <p><strong>Check-in Date:</strong> {{ customer.check_in_date }}</p>
+    <p><strong>Check-out Date:</strong> {{ customer.check_out_date }}</p>
+    <p><strong>Room Charges:</strong> ₹{{ room_cost }}</p>
+    <p><strong>Food Charges:</strong> ₹{{ food_total }}</p>
+    <p><strong>Total Amount:</strong> ₹{{ total_amount }}</p>
+
+    <h2>Food Orders</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in food_orders %}
+                <tr>
+                    <td>{{ order.food_item.name }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>₹{{ order.price }}</td>
+                    <td>₹{{ order.total_price }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No food orders.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+                <td>
+                <a href="{% url 'export_bill_pdf' customer.id %}" class="btn btn-danger btn-sm">PDF</a>
+                <a href="{% url 'export_bill_csv' customer.id %}" class="btn btn-primary btn-sm">CSV</a>
+            </td>
+{% endblock %}

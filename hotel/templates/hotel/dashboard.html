@@ -1,0 +1,90 @@
+{% extends "hotel/base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <h2 class="mb-4">CyberAli Hotel Management System</h2>
+
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="card text-bg-primary shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Total Rooms</h5>
+                    <p class="card-text fs-4">{{ total_rooms }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-bg-success shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Available Rooms</h5>
+                    <p class="card-text fs-4">{{ available_rooms }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-bg-warning shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Current Bookings</h5>
+                    <p class="card-text fs-4">{{ current_bookings }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-bg-danger shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Total Revenue</h5>
+                    <p class="card-text fs-4">₹{{ total_revenue }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="card shadow">
+        <div class="card-header bg-info text-white">
+            <h5 class="mb-0">Recent Customers</h5>
+        </div>
+        <div class="card-body">
+            {% if recent_customers %}
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Room Number</th>
+                        <th>Check-In Date</th>
+                        <th>Check-Out Date</th>
+                        <th>Contact</th>
+                        <th>Check Out</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for customer in recent_customers %}
+                    <tr>
+                        <td>{{ customer.name }}</td>
+                        <td>{{ customer.room.room_number }}</td>
+                        <td>{{ customer.check_in_date }}</td>
+                        <td>{{ customer.check_out_date }}</td>
+                        <td>{{ customer.phone }}</td>
+                        <td>
+                            {% if not customer.check_out_date %}
+                            <a href="{% url 'checkout_customer' customer.id %}"
+                                class="btn btn-warning btn-sm">Checkout</a>
+                            {% else %}
+                            Checked Out ({{ customer.check_out_date }})
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>No recent customers found.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

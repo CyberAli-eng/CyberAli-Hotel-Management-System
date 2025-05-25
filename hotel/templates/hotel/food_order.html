@@ -1,0 +1,27 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+<div><h2>Order Food for {{ customer.name }}</h2>
+<form method="post">
+    {% csrf_token %}
+    <label>Food Item:</label>
+    <select name="food_item" required>
+        {% for item in menu %}
+            <option value="{{ item.id }}">{{ item.name }} - ₹{{ item.price }}</option>
+        {% endfor %}
+    </select>
+    <label>Quantity:</label>
+    <input type="number" name="quantity" value="1" min="1" required>
+    <button type="submit">Add Order</button>
+</form>
+
+
+<h3>Order Summary</h3>
+<ul>
+    {% for order in orders %}
+        <li>{{ order.food_item.name }} x{{ order.quantity }} = ₹{{ order.total_price }}</li>
+    {% empty %}
+        <li>No food orders yet.</li>
+    {% endfor %}
+    
+</ul>
+</div>{% endblock %}

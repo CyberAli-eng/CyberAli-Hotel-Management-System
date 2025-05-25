@@ -1,0 +1,67 @@
+{% extends 'hotel/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Customers</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Room No</th>
+            <th>Room Type</th>
+            <th>Check-in-date</th>
+            <th>Place Order</th>
+            <th>Check-out-date</th>
+            <th>Action</th>
+            <th>Generate Bill</th>
+            <th>Bill Export</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.room.room_number }}</td>
+            <td>{{ customer.room.get_room_type_display }}</td>
+            <td>{{ customer.check_in_date }}</td>
+            <td>
+                <a href="{% url 'food_order' customer.id %}" class="btn btn-sm btn-warning">
+                    <i class="fas fa-hamburger"></i> Order Food
+                </a>
+            </td>
+            <td>{{ customer.check_out_date}}</td>
+            <td>
+                {% if not customer.check_out_date %}
+                    <a href="{% url 'checkout_customer' customer.id %}" class="btn btn-sm btn-success">Checkout</a>
+                {% else %}
+                    <a href="{% url 'delete_customer' customer.id %}" class="btn btn-sm btn-danger">Remove</a>
+                {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'generate_bill' customer.id %}" class="btn btn-sm btn-success">
+                    Generate Bill
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'export_bill_pdf' customer.id %}" class="btn btn-danger btn-sm">PDF</a>
+                <a href="{% url 'export_bill_csv' customer.id %}" class="btn btn-primary btn-sm">CSV</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="10" class="text-center text-muted">No customers found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
