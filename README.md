@@ -44,9 +44,17 @@
 
 ## 🧠 System Diagrams
 
+- ✅ Entity Relation
+- [System Architecture](diagrams/er.jpeg)  
+
 - ✅ Class Diagram
+- ![System Architecture](diagrams/class.png)  
+
 - ✅ Data Flow Diagram (Level 0)
+- ![Data Flow Diagram](diagrams/DFD.png)  
+
 - ✅ System Architecture Diagram
+- ![System Architecture](diagrams/system_archtecture.png) 
 
 *(Available in `/diagrams` folder)*
 
@@ -54,12 +62,9 @@
 
 ## 👨‍💻 Team CyberAli
 
-| Name                 | Course               | Roll No.           |
-|----------------------|----------------------|---------------------|
-| Mohd Nazim           | B.Tech CS (DS)       | 2205241549014       |
-| Ali Khusroo Bin Sabir| B.Tech CS (DS)       | 2205241549002       |
-| Arzoo                | B.Tech CS (AI-ML)    | 2105241530007       |
-| Anurag Rawat         | B.Tech CSE           | 2105240100006       |
+| Name                 | Course               | 
+|----------------------|----------------------|
+| Ali Khusroo Bin Sabir| B.Tech               |
 
 ---
 
