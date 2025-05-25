@@ -36,11 +36,10 @@
 ## 📸 Screenshots
 
 > Add screenshots in your repo and link them here like this:
-
 ![Dashboard](screenshots/dashboard.png)  
-![Booking Form](screenshots/book_room.png)  
-![Final Bill](screenshots/final_bill.png)
-
+![Book Room](screenshots/book_room.png)  
+![Customer List](screenshots/customer_list.png)  
+![Bill Summary](screenshots/bill_summary.png)
 ---
 
 ## 🧠 System Diagrams
