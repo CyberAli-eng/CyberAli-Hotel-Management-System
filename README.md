@@ -34,27 +34,33 @@
 ---
 
 ## 📸 Screenshots
-
 > Add screenshots in your repo and link them here like this:
-![Dashboard](screenshots/dashboard.png)  
-![Book Room](screenshots/book_room.png)  
-![Customer List](screenshots/customer_list.png)  
+- ✅ Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+- ✅ Book_Room
+![Book Room](screenshots/book_room.png)
+
+- ✅ Customer_list portal
+![Customer List](screenshots/customer_list.png)
+
+- ✅ Bill 
 ![Bill Summary](screenshots/bii_summary.png)
 ---
 
 ## 🧠 System Diagrams
 
 - ✅ Entity Relation
-- [ER](diagram/er.jpeg)  
+[ER](diagram/er.png)  
 
 - ✅ Class Diagram
-- ![class](diagram/class.PNG)  
+![class](diagram/class.PNG)  
 
 - ✅ Data Flow Diagram (Level 0)
-- ![Data Flow Diagram](diagram/DFD.PNG)  
+![Data Flow Diagram](diagram/DFD.PNG)  
 
 - ✅ System Architecture Diagram
-- ![System Architecture](diagram/system_archtecture.PNG) 
+![System Architecture](diagram/system_archtecture.PNG) 
 
 *(Available in `/diagrams` folder)*
 
