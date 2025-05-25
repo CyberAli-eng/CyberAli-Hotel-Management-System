@@ -39,7 +39,7 @@
 ![Dashboard](screenshots/dashboard.png)  
 ![Book Room](screenshots/book_room.png)  
 ![Customer List](screenshots/customer_list.png)  
-![Bill Summary](screenshots/bill_summary.png)
+![Bill Summary](screenshots/bii_summary.png)
 ---
 
 ## 🧠 System Diagrams
