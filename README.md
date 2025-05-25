@@ -45,16 +45,16 @@
 ## 🧠 System Diagrams
 
 - ✅ Entity Relation
-- [System Architecture](diagrams/er.jpeg)  
+- [ER](diagrams/er.jpeg)  
 
 - ✅ Class Diagram
-- ![System Architecture](diagrams/class.png)  
+- ![class](diagrams/class.PNG)  
 
 - ✅ Data Flow Diagram (Level 0)
-- ![Data Flow Diagram](diagrams/DFD.png)  
+- ![Data Flow Diagram](diagrams/DFD.PNG)  
 
 - ✅ System Architecture Diagram
-- ![System Architecture](diagrams/system_archtecture.png) 
+- ![System Architecture](diagrams/system_archtecture.PNG) 
 
 *(Available in `/diagrams` folder)*
 
